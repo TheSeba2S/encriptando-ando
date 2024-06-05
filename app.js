@@ -32,7 +32,9 @@ function messageInterval() {
 // Eliminando Acentos y Carácteres especiales
 
 function fixingText(text) {
-    let finalText = text.normalize("NFD")
+    
+    let finalText = text.toLowerCase()
+    .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-zA-Z0-9\s]/g, '');
     return finalText;
